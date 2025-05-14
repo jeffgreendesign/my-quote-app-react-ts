@@ -24,7 +24,7 @@ A simple web application built with React, TypeScript, and Zustand for state man
 
 ## Live Demo
 
-[Link to Live Demo](https://zingy-treacle-5b7cb7.netlify.app/)
+[Link to Live Demo](https://dazzling-puppy-e488c1.netlify.app/)
 
 ## Screenshot
 
