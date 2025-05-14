@@ -17,7 +17,9 @@ const useQuoteStore = create<QuoteStore>((set) => ({
         ? "/.netlify/functions/get-quote"
         : "https://api.api-ninjas.com/v1/quotes";
 
-      const response = await axios.get<Quote[]>(endpoint, {
+      console.log("Fetching quote from:", endpoint);
+
+      const response = await axios.get<Quote | Quote[]>(endpoint, {
         headers: isProduction
           ? {} // No headers needed for Netlify function
           : {
@@ -25,8 +27,20 @@ const useQuoteStore = create<QuoteStore>((set) => ({
             },
       });
 
-      set({ quote: response.data[0], isLoading: false });
+      console.log("Response:", response.data);
+
+      // Handle both direct API response and Netlify function response
+      const quoteData = isProduction
+        ? (response.data as Quote)
+        : (response.data as Quote[])[0];
+
+      if (!quoteData) {
+        throw new Error("No quote data received");
+      }
+
+      set({ quote: quoteData, isLoading: false });
     } catch (error) {
+      console.error("Error fetching quote:", error);
       set({
         error: error instanceof Error ? error.message : "An error occurred",
         isLoading: false,

@@ -25,14 +25,17 @@ export default async (request, context) => {
 
     const data = await response.json();
 
+    // Return the first quote directly
     return new Response(JSON.stringify(data[0]), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
       },
     });
   } catch (error) {
+    console.error("Netlify function error:", error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: {
