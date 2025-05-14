@@ -1,6 +1,6 @@
-# Random Quote Generator (React + Zustand)
+# Random Quote Generator (React + TypeScript + Zustand)
 
-A simple web application built with React and Zustand for state management that fetches and displays random quotes from the API-Ninjas Quotes API.
+A simple web application built with React, TypeScript, and Zustand for state management that fetches and displays random quotes from the API-Ninjas Quotes API.
 
 ## Features
 
@@ -14,6 +14,7 @@ A simple web application built with React and Zustand for state management that 
 ## Technologies Used
 
 - **Frontend:** React 18
+- **Language:** TypeScript
 - **State Management:** Zustand
 - **Build Tool:** Vite
 - **API:** [API-Ninjas Quotes API](https://api-ninjas.com/api/quotes)
@@ -44,8 +45,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/my-quote-app-react.git
-    cd my-quote-app-react
+    git clone https://github.com/YOUR_USERNAME/my-quote-app-react-ts.git
+    cd my-quote-app-react-ts
     ```
 2.  **Install dependencies:**
     ```bash
@@ -166,28 +167,31 @@ To create a production-ready build (static HTML, CSS, JS files):
 ## Project Structure
 
 ```
-my-quote-app-react/
+my-quote-app-react-ts/
 ├── public/              # Static assets directly served
 ├── src/
 │   ├── assets/          # CSS, images, fonts processed by Vite
 │   ├── components/      # Reusable React components
-│   │   ├── QuoteDisplay.jsx
-│   │   └── QuoteControls.jsx
+│   │   ├── QuoteDisplay.tsx
+│   │   └── QuoteControls.tsx
 │   ├── stores/          # Zustand state management stores
-│   │   └── quoteStore.js # Store for quote data, state, actions
-│   ├── App.jsx          # Main application root component
+│   │   └── quoteStore.ts # Store for quote data, state, actions
+│   ├── types/           # TypeScript type definitions
+│   ├── App.tsx          # Main application root component
 │   ├── App.css          # Main application styles
 │   ├── index.css        # Global styles
-│   └── main.jsx         # Application entry point
+│   └── main.tsx         # Application entry point
 ├── netlify/
 │   └── functions/       # Netlify serverless functions
 │       └── get-quote/   # Function for secure API calls
 ├── .env                 # Local environment variables (API Key - DO NOT COMMIT)
-├── .gitignore           # Files/folders ignored by Git
-├── index.html           # Main HTML template
-├── vite.config.js       # Vite build and server configuration (incl. proxy)
-├── package.json         # Project dependencies and scripts
-└── README.md            # This file
+├── .gitignore          # Files/folders ignored by Git
+├── index.html          # Main HTML template
+├── tsconfig.json       # TypeScript configuration
+├── tsconfig.node.json  # TypeScript configuration for Node
+├── vite.config.ts      # Vite build and server configuration (incl. proxy)
+├── package.json        # Project dependencies and scripts
+└── README.md           # This file
 ```
 
 ## API Attribution
