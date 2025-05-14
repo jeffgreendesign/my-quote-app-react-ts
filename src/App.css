@@ -1,0 +1,106 @@
+#app-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.quote-container {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.quote-container.loading,
+.quote-container.error {
+  color: #666;
+  font-style: italic;
+}
+
+.quote-text {
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.quote-author {
+  font-size: 1.1em;
+  color: #666;
+  font-style: italic;
+}
+
+.quote-tags {
+  margin-top: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e9ecef;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  color: #666;
+  margin: 0 5px;
+}
+
+.quote-controls {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.fetch-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fetch-button:hover {
+  background-color: #2980b9;
+}
+
+.fetch-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.9em;
+  color: #777;
+}
+
+footer a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
